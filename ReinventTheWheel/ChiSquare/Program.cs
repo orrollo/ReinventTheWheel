@@ -8,6 +8,8 @@ namespace ChiSquare
 {
     class Program
     {
+        // "A Computational Procedure for Incomplete Gamma Functions", Walter Gautschi
+        // https://www.cs.purdue.edu/homes/wxg/selected_works/section_02/068.pdf
         static double Kummer(double a, double b, double z)
         {
             double t = 1.0, sum = 0.0;
@@ -25,6 +27,8 @@ namespace ChiSquare
             return sum;
         }
 
+        // "A Computational Procedure for Incomplete Gamma Functions", Walter Gautschi
+        // https://www.cs.purdue.edu/homes/wxg/selected_works/section_02/068.pdf
         static double GammaLowerStar(double a, double x)
         {
             return Kummer(a, a + 1, -x) / Math.Exp(GammaLn2(a + 1));
